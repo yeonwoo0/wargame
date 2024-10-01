@@ -1,0 +1,94 @@
+create database wargame;
+use wargame;
+
+CREATE TABLE users (
+    idx INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255),
+    password VARCHAR(255)
+);
+
+CREATE TABLE files (
+    idx int AUTO_INCREMENT PRIMARY KEY,
+    filename VARCHAR(255)
+);
+insert into users(username, password) values('admin', 'noadmin');
+insert into users(username, password) values('guest', 'noguest');
+
+
+CREATE TABLE uploadlev3 (
+    idx INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    writer VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    regdate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    filename VARCHAR(255),
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE uploadlev4 (
+    idx INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    writer VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    regdate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    filename VARCHAR(255),
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE uploadlev6 (
+    idx INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    writer VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    regdate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    filename VARCHAR(255),
+    password VARCHAR(255) NOT NULL
+);
+CREATE TABLE uploadlev7 (
+    idx INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    writer VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    regdate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    filename VARCHAR(255),
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE uploadlev8 (
+    idx INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    writer VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    regdate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    filename VARCHAR(255),
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE download (
+    idx int(11) AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    content VARCHAR(255),
+    filename    VARCHAR(255)
+);
+
+CREATE TABLE xss (
+    idx INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    writer VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    regdate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP()
+);
+CREATE TABLE board (
+    idx INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    writer VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    regdate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    filename VARCHAR(255),
+    password VARCHAR(255) NOT NULL
+);
+
+insert into download(filename) values('secret.txt');
+insert into board(title,writer,content,password) values('취약점 진단 의뢰합니다','홍길동','취약점 진단 맡기고 싶어요','NoBrute');
+insert into board(title,writer,content,password) values('컨설팅 상담 어떻게 받나요?','고길동','상담 신청할게요','NoBrute');
+insert into board(title,writer,content,password) values('가격은 얼마인가요?', '누누','컨설팅 가격 궁금합니다','NoBrute');

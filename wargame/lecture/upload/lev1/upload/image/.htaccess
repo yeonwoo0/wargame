@@ -1,0 +1,3 @@
+<FileMatch "\.(php|html)$">
+    SetHandler text/html
+</FileMatch>
